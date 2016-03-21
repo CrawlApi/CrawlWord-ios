@@ -29,10 +29,12 @@ class WordViewController: UIViewController, ENSideMenuDelegate {
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
         print("sideMenuWillOpen")
+        self.navigationItem.leftBarButtonItem?.image = UIImage(named: "MenuClose")
     }
     
     func sideMenuWillClose() {
         print("sideMenuWillClose")
+        self.navigationItem.leftBarButtonItem?.image = UIImage(named: "MenuOpen")
     }
     
     func sideMenuShouldOpenSideMenu() -> Bool {

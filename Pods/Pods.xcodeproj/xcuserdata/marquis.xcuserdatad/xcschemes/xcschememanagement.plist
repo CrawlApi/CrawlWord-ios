@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ENSwiftSideMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,6 +24,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWTableViewCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1E2B40885828B72766CCA83E678857D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BA292BEF1DEE361384FA786D6522BD9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5E40B80F0FA7BDA9FBB0AB7DDCD07249</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>724F51CCF779796C86727595DB75812E</key>
+		<key>650422D6B626233EA57BC59F4050DB08</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B00FAE59E934C72EE329EF905493572E</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D97692B62C3C22751EDBBAC07D62AE8A</key>
+		<key>7FD9DA53999559CF922FE32A9AAF5CE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>870DEDA66DF474FEEADB4DD4349BF2CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD88D70FD461EC0A801EFE7ED6CB5B11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -4,6 +4,10 @@ platform :ios, "8.0"
 use_frameworks!
 
 pod 'ENSwiftSideMenu', '~> 0.1'
+pod 'RealmSwift'
+pod 'Alamofire', '~> 3.0'
+pod 'SWTableViewCell', '~> 0.3.7'
+
 
 target :Word do
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'

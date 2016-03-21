@@ -70,7 +70,7 @@
         <!--生词薄-->
         <scene sceneID="x4C-Jt-E1n">
             <objects>
-                <viewController storyboardIdentifier="unfamiliar word" title="生词薄" id="saN-BM-VFP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="unfamiliar word" title="生词薄" id="saN-BM-VFP" customClass="RustyWordViewController" customModule="Word" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XH5-te-E2F"/>
                         <viewControllerLayoutGuide type="bottom" id="tT8-qQ-cag"/>
@@ -78,6 +78,22 @@
                     <view key="view" contentMode="scaleToFill" id="plZ-vF-fec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Vh-Nt-AF0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Rusty Word Cell" id="qos-oj-q4a">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qos-oj-q4a" id="ZMY-Xe-EBt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -97,16 +113,87 @@
                     <view key="view" contentMode="scaleToFill" id="1Fp-Ht-QCE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8a-TU-ohv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRy-kO-pY0">
+                                        <rect key="frame" x="46" y="36" width="248" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="248" id="B7t-Vy-msg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8L-8J-aem">
+                                        <rect key="frame" x="314" y="36" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="igS-1G-lWp"/>
+                                            <constraint firstAttribute="width" constant="30" id="muk-mg-YZn"/>
+                                        </constraints>
+                                        <state key="normal" image="SearchBtn"/>
+                                        <connections>
+                                            <action selector="SearchButton:" destination="TXp-9B-zWc" eventType="touchUpInside" id="EBT-Rh-LJH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="j8L-8J-aem" secondAttribute="bottom" constant="26" id="1tm-vN-l2e"/>
+                                    <constraint firstItem="j8L-8J-aem" firstAttribute="leading" secondItem="fRy-kO-pY0" secondAttribute="trailing" constant="20" id="6WR-Hp-E6C"/>
+                                    <constraint firstItem="fRy-kO-pY0" firstAttribute="top" secondItem="l8a-TU-ohv" secondAttribute="top" constant="36" id="7Op-1D-xEp"/>
+                                    <constraint firstItem="fRy-kO-pY0" firstAttribute="leading" secondItem="l8a-TU-ohv" secondAttribute="leading" constant="46" id="SP0-Bk-HUR"/>
+                                    <constraint firstAttribute="bottom" secondItem="fRy-kO-pY0" secondAttribute="bottom" constant="26" id="is1-WI-jhB"/>
+                                    <constraint firstItem="j8L-8J-aem" firstAttribute="top" secondItem="l8a-TU-ohv" secondAttribute="top" constant="36" id="kQ9-Td-IML"/>
+                                    <constraint firstAttribute="trailing" secondItem="j8L-8J-aem" secondAttribute="trailing" constant="31" id="yRQ-fp-qtE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpg-zb-hxw" userLabel="Word">
+                                <rect key="frame" x="51" y="139" width="272" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syr-Hs-GZu" userLabel="Rate">
+                                <rect key="frame" x="51" y="311" width="71" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAb-p8-nbz" userLabel="Rate Num">
+                                <rect key="frame" x="127" y="311" width="120" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeL-2d-EZ8" userLabel="Add Rusty Word">
+                                <rect key="frame" x="223" y="570" width="100" height="30"/>
+                                <state key="normal" title="添加到生词薄"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqA-E7-OUP" userLabel="Add Word">
+                                <rect key="frame" x="51" y="570" width="100" height="30"/>
+                                <state key="normal" title="添加到单词薄"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l8a-TU-ohv" secondAttribute="trailing" id="2gM-nY-xe2"/>
+                            <constraint firstItem="l8a-TU-ohv" firstAttribute="top" secondItem="OD2-ra-bgn" secondAttribute="bottom" constant="-20" id="ZtF-7q-9ra"/>
+                            <constraint firstItem="l8a-TU-ohv" firstAttribute="leading" secondItem="1Fp-Ht-QCE" secondAttribute="leading" id="bh3-ho-RT9"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="SearchBar" destination="fRy-kO-pY0" id="jgR-Pf-JsR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4T-La-b08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.5" y="1156.5"/>
+            <point key="canvasLocation" x="957.5" y="1170.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="MenuOpen" width="13" height="22"/>
+        <image name="MenuOpen" width="25" height="25"/>
+        <image name="SearchBtn" width="50" height="50"/>
     </resources>
 </document>
