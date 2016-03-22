@@ -34,10 +34,12 @@ extension WordDataService{
                         
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.delegate?.showInSearch(searchViewModel)
+                            self.delegate?.loadingDialog(true, msg: "success")
                         })
                     }
                 }else{
                     print("\(response.result.error)")
+                    self.delegate?.loadingDialog(false, msg: "api error")
                 }
         }
     }
@@ -45,4 +47,5 @@ extension WordDataService{
 
 protocol WordDataDelegate: class{
     func showInSearch(searchViewModel: SearchViewModel)
+    func loadingDialog(isShow:Bool, msg: String)
 }

@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, ENSideMenuDelegate, SWTableViewCel
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var wordNameLabel: UILabel!
     @IBOutlet weak var rateStar: CosmosView!
+    @IBOutlet weak var searchBtn: UIButton!
     
     var wordDataService: WordDataService!
     var wordModel: Word = Word()
@@ -26,22 +27,26 @@ class SearchViewController: UIViewController, ENSideMenuDelegate, SWTableViewCel
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "MenuOpen") , style: UIBarButtonItemStyle.Plain, target: self, action: "menu")
     }
     
+    @IBAction func SearchButton(sender: AnyObject) {
+        if let word = searchBar.text{
+            searchBtn.enabled = false
+            self.view.makeToastActivity(.Center)
+            wordDataService = WordDataService(delegate: self, word: word)
+            wordDataService.getWordData()
+        }else{
+            self.view.makeToast("Not Empty")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+
         // Dispose of any resources that can be recreated.
     }
     
     func menu(){
         toggleSideMenuView()
     }
-    
-    @IBAction func SearchButton(sender: AnyObject) {
-        if let word = searchBar.text{
-            wordDataService = WordDataService(delegate: self, word: word)
-            wordDataService.getWordData()
-        }
-    }
-    
     
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
@@ -73,5 +78,15 @@ extension SearchViewController: WordDataDelegate{
     func showInSearch(searchViewModel: SearchViewModel) {
         wordNameLabel.text = searchViewModel.wordModel.word
         rateStar.rating = searchViewModel.wordModel.rate
+    }
+    
+    func loadingDialog(isShow:Bool, msg: String) {
+        if isShow {
+            self.view.hideToastActivity()
+        }else{
+            self.view.hideToastActivity()
+            self.view.makeToast("\(msg)", duration: 3.0, position: .Bottom)
+        }
+        searchBtn.enabled = true
     }
 }
