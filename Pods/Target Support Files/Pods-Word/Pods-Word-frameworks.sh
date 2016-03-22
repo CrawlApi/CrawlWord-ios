@@ -85,17 +85,21 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Word/Alamofire.framework"
+  install_framework "Pods-Word/Cosmos.framework"
   install_framework "Pods-Word/ENSwiftSideMenu.framework"
   install_framework "Pods-Word/Realm.framework"
   install_framework "Pods-Word/RealmSwift.framework"
   install_framework "Pods-Word/SWTableViewCell.framework"
+  install_framework "Pods-Word/ToastSwift.framework"
   install_framework "Pods-Word/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Word/Alamofire.framework"
+  install_framework "Pods-Word/Cosmos.framework"
   install_framework "Pods-Word/ENSwiftSideMenu.framework"
   install_framework "Pods-Word/Realm.framework"
   install_framework "Pods-Word/RealmSwift.framework"
   install_framework "Pods-Word/SWTableViewCell.framework"
+  install_framework "Pods-Word/ToastSwift.framework"
   install_framework "Pods-Word/SwiftyJSON.framework"
 fi
