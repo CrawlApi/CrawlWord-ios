@@ -13,10 +13,12 @@ import SwiftyJSON
 class SearchViewModel {
     
     weak var delegate: SearchViewDelegate?
-    var word: Word?
+    var wordModel: Word = Word()
     
     init(wordDictionary: AnyObject){
-        word!.word = ((packageData(wordDictionary) as NSDictionary)["word"] as! String)
+        let wordDictionary = packageData(wordDictionary)
+        wordModel.word = wordDictionary["word"]! as! String
+        wordModel.rate = wordDictionary["rate"]! as! Double
     }
 }
 
@@ -24,9 +26,11 @@ extension SearchViewModel{
     func packageData(wordDictionary: AnyObject) -> NSDictionary{
         let wordDictionary = JSON(wordDictionary)
         let word = wordDictionary["word"].stringValue
+        let rate = wordDictionary["rate"].intValue
         
         return [
-            "word": word
+            "word": word,
+            "rate": rate
         ]
     }
 }

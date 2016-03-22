@@ -8,12 +8,16 @@
 
 import UIKit
 import ENSwiftSideMenu
+import Cosmos
 
 class SearchViewController: UIViewController, ENSideMenuDelegate, SWTableViewCellDelegate {
     
-    @IBOutlet weak var SearchBar: UITextField!
+    @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var wordNameLabel: UILabel!
+    @IBOutlet weak var rateStar: CosmosView!
     
     var wordDataService: WordDataService!
+    var wordModel: Word = Word()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,7 @@ class SearchViewController: UIViewController, ENSideMenuDelegate, SWTableViewCel
     }
     
     @IBAction func SearchButton(sender: AnyObject) {
-        if let word = SearchBar.text{
+        if let word = searchBar.text{
             wordDataService = WordDataService(delegate: self, word: word)
             wordDataService.getWordData()
         }
@@ -67,6 +71,7 @@ class SearchViewController: UIViewController, ENSideMenuDelegate, SWTableViewCel
 
 extension SearchViewController: WordDataDelegate{
     func showInSearch(searchViewModel: SearchViewModel) {
-        
+        wordNameLabel.text = searchViewModel.wordModel.word
+        rateStar.rating = searchViewModel.wordModel.rate
     }
 }
