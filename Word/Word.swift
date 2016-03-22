@@ -12,7 +12,7 @@ class Word: Object {
     dynamic var word = ""
     dynamic var speakUK = ""
     dynamic var speakUS = ""
-    dynamic var rate = 0
+    dynamic var rate = 0.0
     dynamic var n = ""
     dynamic var vt = ""
     dynamic var vi = ""

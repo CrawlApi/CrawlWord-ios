@@ -37,7 +37,7 @@ extension WordDataService{
                         })
                     }
                 }else{
-                    print("api error")
+                    print("\(response.result.error)")
                 }
         }
     }
