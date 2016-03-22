@@ -31,6 +31,7 @@
 		95B8C6971C9BE88200E1C45E /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8C6961C9BE88200E1C45E /* MenuTableViewController.swift */; };
 		95BDCBBF1CA0017200BDCA6B /* SWTableViewCell.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BDCBBE1CA0017200BDCA6B /* SWTableViewCell.h */; };
 		95BDCBC11CA0F06000BDCA6B /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BDCBC01CA0F06000BDCA6B /* Cosmos.framework */; };
+		95BDCBC71CA136AF00BDCA6B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCBC61CA136AF00BDCA6B /* Toast.swift */; };
 		95DECBD91C9BFF86001E1D5D /* ENSwiftSideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DECBD81C9BFF86001E1D5D /* ENSwiftSideMenu.framework */; };
 		95DECBDB1C9BFF89001E1D5D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DECBDA1C9BFF89001E1D5D /* SwiftyJSON.framework */; };
 		99DF7E04251E4B2B0C04D7BE /* Pods_Word.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA863553F6D1E2E1C369E1B7 /* Pods_Word.framework */; };
@@ -86,6 +87,7 @@
 		95B8C6961C9BE88200E1C45E /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		95BDCBBE1CA0017200BDCA6B /* SWTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWTableViewCell.h; path = Pods/SWTableViewCell/SWTableViewCell/PodFiles/SWTableViewCell.h; sourceTree = "<group>"; };
 		95BDCBC01CA0F06000BDCA6B /* Cosmos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cosmos.framework; path = "Pods/../build/Debug-iphoneos/Cosmos.framework"; sourceTree = "<group>"; };
+		95BDCBC61CA136AF00BDCA6B /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		95DECBD81C9BFF86001E1D5D /* ENSwiftSideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ENSwiftSideMenu.framework; path = "Pods/../build/Debug-iphoneos/ENSwiftSideMenu.framework"; sourceTree = "<group>"; };
 		95DECBDA1C9BFF89001E1D5D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		DA863553F6D1E2E1C369E1B7 /* Pods_Word.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Word.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				95A621A11C9FCA1E00B82961 /* DBUtil.swift */,
+				95BDCBC61CA136AF00BDCA6B /* Toast.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BDCBC71CA136AF00BDCA6B /* Toast.swift in Sources */,
 				95345CC51C9C17D200ED8944 /* SearchViewController.swift in Sources */,
 				95A621961C9FAF0C00B82961 /* Word.swift in Sources */,
 				95B8C6971C9BE88200E1C45E /* MenuTableViewController.swift in Sources */,

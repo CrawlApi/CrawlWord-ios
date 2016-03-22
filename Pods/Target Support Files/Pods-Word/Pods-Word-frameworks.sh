@@ -90,7 +90,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Word/Realm.framework"
   install_framework "Pods-Word/RealmSwift.framework"
   install_framework "Pods-Word/SWTableViewCell.framework"
-  install_framework "Pods-Word/ToastSwift.framework"
   install_framework "Pods-Word/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -100,6 +99,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Word/Realm.framework"
   install_framework "Pods-Word/RealmSwift.framework"
   install_framework "Pods-Word/SWTableViewCell.framework"
-  install_framework "Pods-Word/ToastSwift.framework"
   install_framework "Pods-Word/SwiftyJSON.framework"
 fi

@@ -114,7 +114,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8a-TU-ohv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8a-TU-ohv" userLabel="Search View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRy-kO-pY0">
@@ -195,6 +195,7 @@
                     <connections>
                         <outlet property="rateStar" destination="m89-RL-v7V" id="fCy-G2-v2a"/>
                         <outlet property="searchBar" destination="fRy-kO-pY0" id="Yy6-4e-hPS"/>
+                        <outlet property="searchBtn" destination="j8L-8J-aem" id="4Uz-by-FSW"/>
                         <outlet property="wordNameLabel" destination="Tpg-zb-hxw" id="k7f-wU-uFg"/>
                         <outletCollection property="rateStar" destination="m89-RL-v7V" collectionClass="NSMutableArray" id="tfF-bB-fF5"/>
                     </connections>
