@@ -7,6 +7,8 @@ pod 'ENSwiftSideMenu', '~> 0.1'
 pod 'RealmSwift'
 pod 'Alamofire', '~> 3.0'
 pod 'SWTableViewCell', '~> 0.3.7'
+pod 'Cosmos', '~> 1.2'
+pod 'ToastSwift'
 
 
 target :Word do
