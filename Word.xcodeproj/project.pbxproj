@@ -34,6 +34,7 @@
 		95BDCBC71CA136AF00BDCA6B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCBC61CA136AF00BDCA6B /* Toast.swift */; };
 		95DECBD91C9BFF86001E1D5D /* ENSwiftSideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DECBD81C9BFF86001E1D5D /* ENSwiftSideMenu.framework */; };
 		95DECBDB1C9BFF89001E1D5D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DECBDA1C9BFF89001E1D5D /* SwiftyJSON.framework */; };
+		95F6E6671CA274C40025C51D /* DownloadWordVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6E6661CA274C40025C51D /* DownloadWordVoiceService.swift */; };
 		99DF7E04251E4B2B0C04D7BE /* Pods_Word.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA863553F6D1E2E1C369E1B7 /* Pods_Word.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		95BDCBC61CA136AF00BDCA6B /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		95DECBD81C9BFF86001E1D5D /* ENSwiftSideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ENSwiftSideMenu.framework; path = "Pods/../build/Debug-iphoneos/ENSwiftSideMenu.framework"; sourceTree = "<group>"; };
 		95DECBDA1C9BFF89001E1D5D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		95F6E6661CA274C40025C51D /* DownloadWordVoiceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadWordVoiceService.swift; sourceTree = "<group>"; };
 		DA863553F6D1E2E1C369E1B7 /* Pods_Word.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Word.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E6B59F9A839A5772872C73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				95A621A41C9FCD5900B82961 /* WordDataService.swift */,
+				95F6E6661CA274C40025C51D /* DownloadWordVoiceService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				95345CC51C9C17D200ED8944 /* SearchViewController.swift in Sources */,
 				95A621961C9FAF0C00B82961 /* Word.swift in Sources */,
 				95B8C6971C9BE88200E1C45E /* MenuTableViewController.swift in Sources */,
+				95F6E6671CA274C40025C51D /* DownloadWordVoiceService.swift in Sources */,
 				95B8C6621C9BAC6100E1C45E /* WordViewController.swift in Sources */,
 				95A621931C9FAD9400B82961 /* AppConfig.swift in Sources */,
 				95B8C68F1C9BE6B100E1C45E /* MenuNavigationController.swift in Sources */,

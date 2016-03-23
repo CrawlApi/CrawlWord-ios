@@ -19,14 +19,14 @@ class Word: Object {
     dynamic var adj = ""
     dynamic var adv = ""
     dynamic var shapes = NSData()
-    dynamic var createdAt = ""
     
     dynamic var isRusty = false
+    
+    let collins = List<Collins>()
+    dynamic var createdAt = ""
     
     override static func primaryKey() -> String? {
         return "word"
     }
-    
-    let collins = List<Collins>()
 }
  
