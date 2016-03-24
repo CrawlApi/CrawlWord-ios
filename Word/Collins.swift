@@ -11,7 +11,13 @@ import RealmSwift
 class Collins: Object {
     dynamic var category = ""
     dynamic var note = ""
-    dynamic var sentence = NSData()
+    let sentence = List<Sentence>()
     
     dynamic var owner: Word?
+}
+
+class Sentence: Object {
+    dynamic var en = ""
+    dynamic var zh = ""
+    dynamic var voice = ""
 }

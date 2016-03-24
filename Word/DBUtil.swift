@@ -10,19 +10,21 @@ import Foundation
 import RealmSwift
 
 class DBUtil {
-    class func inset(data: Object?) {
+
+    class func inset(data: Word?) -> Bool {
         let realm = try! Realm()
         
         try! realm.write{
             realm.add(data!)
         }
+        
+        return true
     }
     
     class func delete(key: String) {
         let realm = try! Realm()
         
         var word: Word!
-        
         word = realm.objectForPrimaryKey(Word.self, key: key)
         
         if word != nil {
@@ -32,7 +34,25 @@ class DBUtil {
         }
     }
     
-    class func update() {
+    class func update(key: String, isRusty: Bool) {
+        let realm = try! Realm()
         
+        var word: Word!
+        word = realm.objectForPrimaryKey(Word.self, key: key)
+        
+        if word != nil{
+            word.isRusty = isRusty
+        }
+        
+        try! realm.write{
+            realm.add(word, update: true)
+        }
     }
+    
+    class func wordDataByWord(word: String) -> Results<Word> {
+        let realm = try! Realm()
+    
+        return realm.objects(Word).filter("word = '\(word)'").sorted("createdAt", ascending: false)
+    }
+
 }

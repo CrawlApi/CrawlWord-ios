@@ -46,11 +46,37 @@ class SearchViewController: UIViewController, ENSideMenuDelegate, SWTableViewCel
     }
     
     @IBAction func AddWordButton(sender: AnyObject) {
-        let test = NSKeyedUnarchiver.unarchiveObjectWithData(searchViewModel.wordModel.shapes)! as! NSDictionary
-        print("\(test)")
+        //判断是否已经存入数据库
+        let word = DBUtil.wordDataByWord(searchViewModel.wordModel.word)
+        if word.isEmpty {
+            if DBUtil.inset(searchViewModel.wordModel) {
+                self.view.makeToast("成功添加进单词薄", duration: 3.0, position: .Bottom)
+            }
+        }else{
+            if word[0].isRusty {
+                self.view.makeToast("生词薄里已存在", duration: 3.0, position: .Bottom)
+            }else{
+                self.view.makeToast("单词薄里已存在", duration: 3.0, position: .Bottom)
+            }
+        }
     }
     
     @IBAction func AddRustyWordButton(sender: AnyObject) {
+        //判断是否已经存入数据库
+        let word = DBUtil.wordDataByWord(searchViewModel.wordModel.word)
+        if word.isEmpty {
+            //slug为生词薄
+            searchViewModel.wordModel.isRusty = true
+            if DBUtil.inset(searchViewModel.wordModel) {
+                self.view.makeToast("成功添加进单词薄", duration: 3.0, position: .Bottom)
+            }
+        }else{
+            if word[0].isRusty {
+                self.view.makeToast("生词薄里已存在", duration: 3.0, position: .Bottom)
+            }else{
+                self.view.makeToast("单词薄里已存在", duration: 3.0, position: .Bottom)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
