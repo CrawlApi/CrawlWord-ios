@@ -14,7 +14,7 @@ class MenuNavigationController: ENSideMenuNavigationController, ENSideMenuDelega
         super.viewDidLoad()
         
         sideMenu = ENSideMenu(sourceView: self.view, menuViewController: MenuTableViewController(), menuPosition:.Left)
-        sideMenu?.menuWidth = 180.0 // optional, default is 160
+        sideMenu?.menuWidth = 160.0 // optional, default is 160
         view.bringSubviewToFront(navigationBar)
     }
     

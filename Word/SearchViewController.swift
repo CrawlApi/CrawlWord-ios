@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import ENSwiftSideMenu
 import Cosmos
+import ENSwiftSideMenu
 
-class SearchViewController: UIViewController, ENSideMenuDelegate, SWTableViewCellDelegate {
+class SearchViewController: UIViewController, ENSideMenuDelegate {
     
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var wordNameLabel: UILabel!

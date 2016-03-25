@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Chris Wendel. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface NSMutableArray (SWUtilityButtons)

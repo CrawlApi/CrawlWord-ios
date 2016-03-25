@@ -21,7 +21,7 @@ class DBUtil {
         return true
     }
     
-    class func delete(key: String) {
+    class func delete(key: String) -> Bool {
         let realm = try! Realm()
         
         var word: Word!
@@ -31,21 +31,25 @@ class DBUtil {
             try! realm.write{
                 realm.delete(word)
             }
+            return true
+        }else{
+            return false
         }
     }
     
-    class func update(key: String, isRusty: Bool) {
+    class func update(key: String, isRusty: Bool) -> Bool {
         let realm = try! Realm()
         
         var word: Word!
         word = realm.objectForPrimaryKey(Word.self, key: key)
         
         if word != nil{
-            word.isRusty = isRusty
-        }
-        
-        try! realm.write{
-            realm.add(word, update: true)
+            try! realm.write{
+                word.isRusty = isRusty
+            }
+            return true
+        }else{
+            return false
         }
     }
     
@@ -54,5 +58,12 @@ class DBUtil {
     
         return realm.objects(Word).filter("word = '\(word)'").sorted("createdAt", ascending: false)
     }
-
+    
+    class func findByIsRusty(isRusty: Bool) -> Results<Word>{
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "isRusty == %@", NSNumber(bool: isRusty))
+        return realm.objects(Word).filter(predicate).sorted("createdAt", ascending: false)
+    }
+    
 }
