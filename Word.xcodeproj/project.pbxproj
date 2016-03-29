@@ -359,6 +359,7 @@
 				TargetAttributes = {
 					95B8C65B1C9BAC6100E1C45E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GYH73D7FMS;
 					};
 					95B8C66F1C9BAC6100E1C45E = {
 						CreatedOnToolsVersion = 7.2;
@@ -627,6 +628,7 @@
 			baseConfigurationReference = F0E6B59F9A839A5772872C73 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/build/Debug-iphoneos";
 				INFOPLIST_FILE = Word/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -642,6 +644,7 @@
 			baseConfigurationReference = 806EB1F03C5DAA12C68AA1D7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/build/Debug-iphoneos";
 				INFOPLIST_FILE = Word/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;

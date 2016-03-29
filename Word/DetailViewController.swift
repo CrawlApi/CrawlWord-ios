@@ -13,6 +13,8 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
     
     var wordItem: Word = Word()
     var playVoiceService: PlayVoiceService = PlayVoiceService()
+    var voiceArray: [String] = []
+    var voiceIndex = 0
     
     @IBOutlet weak var wordNameLabel: UILabel!
     @IBOutlet weak var rateStar: CosmosView!
@@ -61,7 +63,7 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
             let note = UILabel(frame: CGRectMake(0, 0, 300, 42))
             note.lineBreakMode = NSLineBreakMode.ByCharWrapping
             note.numberOfLines = 0
-            note.center = CGPointMake(160, 0 + spacer )
+            note.center = CGPointMake(180, 0 + spacer )
             note.text = "(\(noteNum))"
             note.font = UIFont(name: note.font.fontName, size: 12)
             
@@ -71,9 +73,10 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
             label.center = CGPointMake(200, 0 + spacer )
             label.text = collins.note
             label.font = UIFont(name: label.font.fontName, size: 12)
-            
             for sentence in collins.sentence{
-                packagesentence(sentence, spacer: spacer)
+                voiceArray.append(sentence.voice)
+                packagesentence(sentence, spacer: spacer, voiceArray: voiceArray, voiceIndex: voiceIndex)
+                voiceIndex++
                 spacer = spacer + 50
             }
             
@@ -84,14 +87,19 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
         }
     }
     
-    func packagesentence(sentence: Sentence, spacer: CGFloat){
-        let enLabel = UILabel(frame: CGRectMake(0, 0, 300, 42))
+    func packagesentence(sentence: Sentence, spacer: CGFloat, voiceArray: [String], voiceIndex: Int){
+        let enLabel = UILabel(frame: CGRectMake(0, 0, 275, 42))
         enLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         enLabel.numberOfLines = 0
         enLabel.center = CGPointMake(200, spacer + 30 )
         enLabel.text = sentence.en
         enLabel.font = UIFont(name: enLabel.font.fontName, size: 12)
         
+        let voiceButton = UIButton(frame: CGRectMake(345, 25, 25, 25)) as UIButton
+        voiceButton.center = CGPointMake(350, spacer + 30 )
+        voiceButton.setImage(UIImage(named: "VoiceClose"), forState: .Normal)
+        voiceButton.tag = voiceIndex
+        voiceButton.addTarget(self, action: "voiceAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
         let zhLabel = UILabel(frame: CGRectMake(0, 0, 300, 42))
         zhLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
@@ -102,6 +110,13 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
         
         self.collins.addSubview(enLabel)
         self.collins.addSubview(zhLabel)
+        self.collins.addSubview(voiceButton)
+    }
+    
+    func voiceAction(sender: UIButton){
+        if self.voiceArray[sender.tag] != "" {
+            playVoiceService.play(NSURL(string: self.voiceArray[sender.tag])!)
+        }
     }
     
     @IBAction func SpeakUKVoice(sender: AnyObject) {
