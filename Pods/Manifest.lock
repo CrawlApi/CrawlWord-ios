@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (3.2.1)
   - Cosmos (1.2.2)
-  - ENSwiftSideMenu (0.1)
-  - Realm (0.98.5):
-    - Realm/Headers (= 0.98.5)
-  - Realm/Headers (0.98.5)
-  - RealmSwift (0.98.5):
-    - Realm (= 0.98.5)
+  - ENSwiftSideMenu (0.1.1)
+  - Realm (0.98.6):
+    - Realm/Headers (= 0.98.6)
+  - Realm/Headers (0.98.6)
+  - RealmSwift (0.98.6):
+    - Realm (= 0.98.6)
   - SwiftyJSON (2.3.2)
   - SWTableViewCell (0.3.7)
 
@@ -30,9 +30,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   Cosmos: 87c49100c69d2cb2eebfa4eb8d1e801fe29ff774
-  ENSwiftSideMenu: 4e17a97d1d92c1a9c7267993a167e27e0a10422d
-  Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
-  RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358
+  ENSwiftSideMenu: a934caefbe811e4925f172009349da4a49901307
+  Realm: 44803f35418c5d89b27825a564247fcd190de37e
+  RealmSwift: c7239c52c83f8c43525a5269ba7be1694da33afc
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
 

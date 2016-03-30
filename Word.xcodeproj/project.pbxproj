@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		68D6C18B8D5A8C9199DB53F1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21DEB93CEA86CF92668F2CDD /* Pods.framework */; };
 		95345CC51C9C17D200ED8944 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95345CC41C9C17D200ED8944 /* SearchViewController.swift */; };
+		95421AA31CAB72600090830A /* SWTableViewCell.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 95421AA21CAB72600090830A /* SWTableViewCell.h */; };
 		9572C4801CA3C9F400BB1259 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572C47F1CA3C9F400BB1259 /* WordCell.swift */; };
 		95A621901C9F9D4D00B82961 /* RustyWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A6218F1C9F9D4D00B82961 /* RustyWordViewController.swift */; };
 		95A621931C9FAD9400B82961 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A621921C9FAD9400B82961 /* AppConfig.swift */; };
@@ -30,7 +31,6 @@
 		95B8C6801C9BAC6100E1C45E /* WordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8C67F1C9BAC6100E1C45E /* WordUITests.swift */; };
 		95B8C68F1C9BE6B100E1C45E /* MenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8C68E1C9BE6B100E1C45E /* MenuNavigationController.swift */; };
 		95B8C6971C9BE88200E1C45E /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8C6961C9BE88200E1C45E /* MenuTableViewController.swift */; };
-		95BDCBBF1CA0017200BDCA6B /* SWTableViewCell.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BDCBBE1CA0017200BDCA6B /* SWTableViewCell.h */; };
 		95BDCBC11CA0F06000BDCA6B /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BDCBC01CA0F06000BDCA6B /* Cosmos.framework */; };
 		95BDCBC71CA136AF00BDCA6B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BDCBC61CA136AF00BDCA6B /* Toast.swift */; };
 		95DC925B1CA4FBB100261A07 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC925A1CA4FBB100261A07 /* DetailViewController.swift */; };
@@ -62,6 +62,7 @@
 		21DEB93CEA86CF92668F2CDD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806EB1F03C5DAA12C68AA1D7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		95345CC41C9C17D200ED8944 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		95421AA21CAB72600090830A /* SWTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWTableViewCell.h; path = Pods/SWTableViewCell/SWTableViewCell/PodFiles/SWTableViewCell.h; sourceTree = "<group>"; };
 		9572C47F1CA3C9F400BB1259 /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		95A6218F1C9F9D4D00B82961 /* RustyWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RustyWordViewController.swift; sourceTree = "<group>"; };
 		95A621921C9FAD9400B82961 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		95B8C6811C9BAC6100E1C45E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95B8C68E1C9BE6B100E1C45E /* MenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuNavigationController.swift; sourceTree = "<group>"; };
 		95B8C6961C9BE88200E1C45E /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		95BDCBBE1CA0017200BDCA6B /* SWTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWTableViewCell.h; path = Pods/SWTableViewCell/SWTableViewCell/PodFiles/SWTableViewCell.h; sourceTree = "<group>"; };
 		95BDCBC01CA0F06000BDCA6B /* Cosmos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cosmos.framework; path = "Pods/../build/Debug-iphoneos/Cosmos.framework"; sourceTree = "<group>"; };
 		95BDCBC61CA136AF00BDCA6B /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		95DC925A1CA4FBB100261A07 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95421AA31CAB72600090830A /* SWTableViewCell.h in Frameworks */,
 				95BDCBC11CA0F06000BDCA6B /* Cosmos.framework in Frameworks */,
-				95BDCBBF1CA0017200BDCA6B /* SWTableViewCell.h in Frameworks */,
 				95A621A91C9FED2B00B82961 /* SWTableViewCell.framework in Frameworks */,
 				95A6219A1C9FAFCA00B82961 /* Alamofire.framework in Frameworks */,
 				95A6219B1C9FAFCA00B82961 /* Realm.framework in Frameworks */,
@@ -140,8 +140,8 @@
 		6ED3C8E60ED6CCEC56B45BB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95421AA21CAB72600090830A /* SWTableViewCell.h */,
 				95BDCBC01CA0F06000BDCA6B /* Cosmos.framework */,
-				95BDCBBE1CA0017200BDCA6B /* SWTableViewCell.h */,
 				95A621A81C9FED2B00B82961 /* SWTableViewCell.framework */,
 				95A621971C9FAFCA00B82961 /* Alamofire.framework */,
 				95A621981C9FAFCA00B82961 /* Realm.framework */,
@@ -629,7 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/build/Debug-iphoneos";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Word/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -645,7 +645,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/build/Debug-iphoneos";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Word/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
