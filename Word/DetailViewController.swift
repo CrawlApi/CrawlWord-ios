@@ -63,48 +63,49 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
             let note = UILabel(frame: CGRectMake(0, 0, 300, 42))
             note.lineBreakMode = NSLineBreakMode.ByCharWrapping
             note.numberOfLines = 0
-            note.center = CGPointMake(180, 0 + spacer )
+            note.center = CGPointMake(160, 25 + spacer )
             note.text = "(\(noteNum))"
             note.font = UIFont(name: note.font.fontName, size: 12)
             
             let label = UILabel(frame: CGRectMake(0, 0, 300, 42))
             label.lineBreakMode = NSLineBreakMode.ByCharWrapping
             label.numberOfLines = 0
-            label.center = CGPointMake(200, 0 + spacer )
+            label.center = CGPointMake(180, 25 + spacer )
             label.text = collins.note
             label.font = UIFont(name: label.font.fontName, size: 12)
             for sentence in collins.sentence{
                 voiceArray.append(sentence.voice)
                 packagesentence(sentence, spacer: spacer, voiceArray: voiceArray, voiceIndex: voiceIndex)
-                voiceIndex++
+                voiceIndex += 1
                 spacer = spacer + 50
             }
             
             spacer = spacer + 50
-            noteNum++
+            noteNum += 1
             self.collins.addSubview(note)
             self.collins.addSubview(label)
         }
+        self.collins.contentSize = CGSize(width: 375, height: spacer)
     }
     
     func packagesentence(sentence: Sentence, spacer: CGFloat, voiceArray: [String], voiceIndex: Int){
         let enLabel = UILabel(frame: CGRectMake(0, 0, 275, 42))
         enLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         enLabel.numberOfLines = 0
-        enLabel.center = CGPointMake(200, spacer + 30 )
+        enLabel.center = CGPointMake(190, spacer + 50 )
         enLabel.text = sentence.en
         enLabel.font = UIFont(name: enLabel.font.fontName, size: 12)
         
         let voiceButton = UIButton(frame: CGRectMake(345, 25, 25, 25)) as UIButton
-        voiceButton.center = CGPointMake(350, spacer + 30 )
+        voiceButton.center = CGPointMake(350, spacer + 50 )
         voiceButton.setImage(UIImage(named: "VoiceClose"), forState: .Normal)
         voiceButton.tag = voiceIndex
-        voiceButton.addTarget(self, action: "voiceAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        voiceButton.addTarget(self, action: #selector(DetailViewController.voiceAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         let zhLabel = UILabel(frame: CGRectMake(0, 0, 300, 42))
         zhLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         zhLabel.numberOfLines = 0
-        zhLabel.center = CGPointMake(200, spacer + 50 )
+        zhLabel.center = CGPointMake(190, spacer + 75 )
         zhLabel.text = sentence.zh
         zhLabel.font = UIFont(name: enLabel.font.fontName, size: 12)
         
@@ -142,7 +143,7 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
         navigationItem.title = wordItem.word
         
         // Create left and right button for navigation item
-        let leftButton = UIBarButtonItem(image: UIImage(named: "Back") , style: UIBarButtonItemStyle.Plain, target: self, action: "backButtonClick")
+        let leftButton = UIBarButtonItem(image: UIImage(named: "Back") , style: UIBarButtonItemStyle.Plain, target: self, action: #selector(DetailViewController.backButtonClick))
         
         // Create two buttons for the navigation item
         navigationItem.leftBarButtonItem = leftButton
