@@ -27,16 +27,19 @@ class SearchViewController: UIViewController, ENSideMenuDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.sideMenuController()?.sideMenu?.delegate = self
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "MenuOpen") , style: UIBarButtonItemStyle.Plain, target: self, action: "menu")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "MenuOpen") , style: UIBarButtonItemStyle.Plain, target: self, action: #selector(SearchViewController.menu))
         //star do not touch
         rateStar.settings.updateOnTouch = false
         addWordBtn.enabled = false
+        addRustyWordBtn.enabled = false
     }
     
     @IBAction func SearchButton(sender: AnyObject) {
+        searchBar.resignFirstResponder()
         if let word = searchBar.text{
             searchBtn.enabled = false
             addWordBtn.enabled = false
+            addRustyWordBtn.enabled = false
             self.view.makeToastActivity(.Center)
             wordDataService = WordDataService(delegate: self, word: word)
             wordDataService.getWordData()
@@ -77,6 +80,10 @@ class SearchViewController: UIViewController, ENSideMenuDelegate {
                 self.view.makeToast("单词薄里已存在", duration: 3.0, position: .Bottom)
             }
         }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        searchBar.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,6 +133,7 @@ extension SearchViewController: WordDataDelegate{
         if isShow {
             self.view.hideToastActivity()
             addWordBtn.enabled = true
+            addRustyWordBtn.enabled = true
         }else{
             self.view.hideToastActivity()
             self.view.makeToast("\(msg)", duration: 3.0, position: .Bottom)
