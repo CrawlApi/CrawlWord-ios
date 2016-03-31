@@ -8,6 +8,6 @@
 
 import Foundation
 
-var wordApi = "http://crawl.l.wizmacau.com/api/word/"
+var wordApi = "http://apimarket.xyz/api/word/"
 
 
