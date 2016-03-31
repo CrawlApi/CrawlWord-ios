@@ -27,7 +27,7 @@ class RustyWordViewController: UIViewController, ENSideMenuDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.sideMenuController()?.sideMenu?.delegate = self
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "MenuOpen") , style: UIBarButtonItemStyle.Plain, target: self, action: "menu")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "MenuOpen") , style: UIBarButtonItemStyle.Plain, target: self, action: #selector(RustyWordViewController.menu))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorInset = UIEdgeInsetsZero
