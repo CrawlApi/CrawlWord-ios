@@ -448,7 +448,7 @@
                                     <constraint firstAttribute="trailing" secondItem="j8L-8J-aem" secondAttribute="trailing" constant="31" id="yRQ-fp-qtE"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpg-zb-hxw" userLabel="Word">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpg-zb-hxw" userLabel="Word">
                                 <rect key="frame" x="52" y="210" width="272" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="272" id="H2D-FA-FEa"/>
