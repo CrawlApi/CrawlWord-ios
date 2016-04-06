@@ -16,6 +16,8 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
     var voiceArray: [String] = []
     var voiceIndex = 0
     
+    var internetReachability: Reachability!
+    
     @IBOutlet weak var wordNameLabel: UILabel!
     @IBOutlet weak var rateStar: CosmosView!
     
@@ -33,6 +35,8 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //create navigationBar
+        //获取联网状态
+        self.internetReachability = Reachability.reachabilityForInternetConnection()
         createNavigationBar()
         initData()
     }
@@ -116,19 +120,31 @@ class DetailViewController: UIViewController, UINavigationBarDelegate {
     
     func voiceAction(sender: UIButton){
         if self.voiceArray[sender.tag] != "" {
-            playVoiceService.play(NSURL(string: self.voiceArray[sender.tag])!)
+            if self.internetReachability.currentReachabilityStatus().rawValue != 0 {
+                playVoiceService.play(NSURL(string: self.voiceArray[sender.tag])!)
+            }else{
+                self.view.makeToast("网络状态：Disconnection")
+            }
         }
     }
     
     @IBAction func SpeakUKVoice(sender: AnyObject) {
         if wordItem.speakUK != "" {
-            playVoiceService.play(NSURL(string: wordItem.speakUK)!)
+            if self.internetReachability.currentReachabilityStatus().rawValue != 0 {
+                playVoiceService.play(NSURL(string: wordItem.speakUK)!)
+            }else{
+                self.view.makeToast("网络状态：Disconnection")
+            }
         }
     }
     
     @IBAction func SpeakUSVoice(sender: AnyObject) {
         if wordItem.speakUS != "" {
-            playVoiceService.play(NSURL(string: wordItem.speakUS)!)
+            if self.internetReachability.currentReachabilityStatus().rawValue != 0 {
+                playVoiceService.play(NSURL(string: wordItem.speakUS)!)
+            }else{
+                self.view.makeToast("网络状态：Disconnection")
+            }
         }
     }
     

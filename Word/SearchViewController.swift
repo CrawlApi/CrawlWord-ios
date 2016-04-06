@@ -23,6 +23,8 @@ class SearchViewController: UIViewController, ENSideMenuDelegate {
     var wordModel: Word = Word()
     var searchViewModel: SearchViewModel!
     
+    var internetReachability: Reachability!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,19 +34,27 @@ class SearchViewController: UIViewController, ENSideMenuDelegate {
         rateStar.settings.updateOnTouch = false
         addWordBtn.enabled = false
         addRustyWordBtn.enabled = false
+        //获取联网状态
+        self.internetReachability = Reachability.reachabilityForInternetConnection()
     }
     
     @IBAction func SearchButton(sender: AnyObject) {
         searchBar.resignFirstResponder()
-        if let word = searchBar.text{
-            searchBtn.enabled = false
-            addWordBtn.enabled = false
-            addRustyWordBtn.enabled = false
-            self.view.makeToastActivity(.Center)
-            wordDataService = WordDataService(delegate: self, word: word)
-            wordDataService.getWordData()
+        let word = searchBar.text
+        print(self.internetReachability.currentReachabilityStatus().rawValue)
+        if self.internetReachability.currentReachabilityStatus().rawValue != 0 {
+            if word != "" {
+                searchBtn.enabled = false
+                addWordBtn.enabled = false
+                addRustyWordBtn.enabled = false
+                self.view.makeToastActivity(.Center)
+                wordDataService = WordDataService(delegate: self, word: word!)
+                wordDataService.getWordData()
+            }else{
+                self.view.makeToast("Not Empty")
+            }
         }else{
-            self.view.makeToast("Not Empty")
+             self.view.makeToast("网络状态：Disconnection")
         }
     }
     

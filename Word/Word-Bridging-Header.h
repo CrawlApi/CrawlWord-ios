@@ -10,5 +10,6 @@
 #define Word_Bridging_Header_h
 
 #import "SWTableViewCell.h"
+#import "Reachability.h"
 
 #endif /* Word_Bridging_Header_h */
